@@ -1,5 +1,5 @@
 {% set name = "dphtools" %}
-{% set version = "0.0.2" %}
+{% set version = "0.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dphtools-{{ version }}.tar.gz
-  sha256: 3a3c63cb4a849e7b10c1c20e1d3b090ccc4af66ced956cd1b17382b94fd2ba3a
+  sha256: 7dbc11597977b40db716e9e7f5214449e7ba6cd0e53825bb5f7d6c86d7149a69
 
 build:
   noarch: python
