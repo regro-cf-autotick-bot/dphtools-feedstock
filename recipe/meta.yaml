@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/dphtools-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/dphtools-{{ version }}.tar.gz
   sha256: e0f3beb4b83dfb11dc5b576c94417796997b836df398df043940bc0ffac58781
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - matplotlib-base
     - numpy
     - pandas
-    - python >=3.8
+    - python >={{ python_min }}
     - scikit-image
     - scipy
 
@@ -34,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/david-hoffman/dphtools
